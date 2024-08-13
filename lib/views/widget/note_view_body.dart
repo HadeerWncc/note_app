@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/views/widget/customer_app_bar.dart';
+import 'package:note_app/views/widget/list_of_notes.dart';
 import 'package:note_app/views/widget/note_item.dart';
 
 class NoteViewBody extends StatelessWidget {
@@ -12,7 +13,9 @@ class NoteViewBody extends StatelessWidget {
       child: const Column(
         children: [
           CustomerAppBar(),
-          NoteItem(),
+          Expanded(
+            child: NoteListView(),
+          ),
         ],
       ),
     );

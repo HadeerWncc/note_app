@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
@@ -7,16 +6,16 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20, bottom: 20, left: 12),
+      padding: const EdgeInsets.only(top: 20, bottom: 20, left: 12),
       decoration: BoxDecoration(
-        color: Color(0xffffce7f),
+        color: const Color(0xffffce7f),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
-            title: Text(
+            title: const Text(
               'Flutter tips',
               style: TextStyle(
                 color: Colors.black,
@@ -35,7 +34,7 @@ class NoteItem extends StatelessWidget {
             ),
             trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.delete,
                   color: Colors.black,
                   size: 26,
