@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constant.dart';
 import 'package:note_app/views/widget/note_view_body.dart';
 import 'package:note_app/views/widget/show_add_new_note.dart';
 
@@ -21,7 +22,7 @@ class NotesView extends StatelessWidget {
         child: Icon(
           Icons.add,
         ),
-        backgroundColor: Color(0xff53ebd5),
+        backgroundColor: primaryColor,
         foregroundColor: Colors.black,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
       ),
