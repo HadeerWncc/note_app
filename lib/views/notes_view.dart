@@ -19,12 +19,12 @@ class NotesView extends StatelessWidget {
                 return const AddNewNote();
               });
         },
-        child: Icon(
-          Icons.add,
-        ),
         backgroundColor: primaryColor,
         foregroundColor: Colors.black,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
+        child: const Icon(
+          Icons.add,
+        ),
       ),
       body: const NoteViewBody(),
     );

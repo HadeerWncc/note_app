@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CustomSearshIcon extends StatelessWidget {
-  const CustomSearshIcon({super.key});
-
+class CustomIcon extends StatelessWidget {
+  const CustomIcon({super.key, required this.icon});
+  final Icon icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,8 +12,8 @@ class CustomSearshIcon extends StatelessWidget {
         color: Colors.white.withOpacity(.05),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: const Center(
-        child: Icon(Icons.search),
+      child: Center(
+        child: icon,
       ),
     );
   }
