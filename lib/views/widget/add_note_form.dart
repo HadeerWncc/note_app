@@ -48,9 +48,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
           ),
           const SizedBox(
-            height: 50,
+            height: 25,
           ),
           const ColorListView(),
+          const SizedBox(
+            height: 25,
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
@@ -64,7 +67,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       title: title!,
                       subTitle: subTitle!,
                       date: formatedDate,
-                      color: Colors.amber.value,
                     );
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                   } else {
@@ -83,5 +85,3 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
-
-
