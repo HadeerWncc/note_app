@@ -18,7 +18,7 @@ class AddNewNote extends StatelessWidget {
             print('failed ${state.errMessage}');
           }
           if (state is AddNoteSuccess) {
-            BlocProvider.of<NotesCubit>(context).getNotes();
+            BlocProvider.of<NotesCubit>(context).getNotes(null);
             Navigator.pop(context);
             
           }

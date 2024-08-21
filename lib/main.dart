@@ -8,10 +8,25 @@ import 'package:note_app/simple_bloc_observer.dart';
 import 'package:note_app/views/notes_view.dart';
 
 void main() async {
+  // await Hive.initFlutter();
+  // Hive.registerAdapter(NoteModelAdapter());
+  // await Hive.openBox<NoteModel>(knotesBox);
+  // Bloc.observer = SimpleBlocObserver();
+
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
-  await Hive.openBox<NoteModel>(knotesBox);
+  var box = await Hive.openBox<NoteModel>(knotesBox);
+
+  // Save a test note
+  // await box.put('testNoteKey',
+  //     NoteModel(title: 'Test Note', subTitle: '', date: '', color: 1));
+
+  // Retrieve the test note
+  var retrievedNote = box.get('testNoteKey');
+  print(retrievedNote?.title); // Should print: Test Note
+
+  Bloc.observer = SimpleBlocObserver();
   runApp(const NoteApp());
 }
 

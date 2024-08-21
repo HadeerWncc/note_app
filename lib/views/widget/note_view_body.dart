@@ -15,21 +15,27 @@ class _NoteViewBodyState extends State<NoteViewBody> {
   @override
   void initState() {
     // TODO: implement initState
-    BlocProvider.of<NotesCubit>(context).getNotes();
+    BlocProvider.of<NotesCubit>(context).getNotes(null);
     super.initState();
   }
 
+  bool search = false;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(24),
+    return Padding(
+      padding: const EdgeInsets.all(24),
       child: Column(
         children: [
           CustomerAppBar(
+            onPressed: () {
+              search = true;
+              setState(() {});
+            },
             textTitle: 'Note',
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
+            inputSearch: search,
           ),
-          Expanded(
+          const Expanded(
             child: NoteListView(),
           ),
         ],

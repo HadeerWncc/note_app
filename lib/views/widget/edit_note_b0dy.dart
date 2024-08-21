@@ -30,7 +30,7 @@ class _EditNoteBodyState extends State<EditNoteBody> {
               widget.note.subTitle = subTitle ?? widget.note.subTitle;
               // widget.note.color =
               widget.note.save();
-              BlocProvider.of<NotesCubit>(context).getNotes();
+              BlocProvider.of<NotesCubit>(context).getNotes(null);
               Navigator.pop(context);
             },
             textTitle: 'Edit Note',
