@@ -10,9 +10,7 @@ class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitial());
   var noteBox = Hive.box<NoteModel>(knotesBox);
   List<NoteModel>? notes;
-  // String? searchtitle;
   getNotes(String? searchTitle) {
-    // var noteBox = Hive.box<NoteModel>(knotesBox);
     notes = noteBox.values.toList();
     notes = notes!.reversed.toList();
     if (searchTitle != null && searchTitle != "") {
